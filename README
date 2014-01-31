@@ -1,6 +1,7 @@
 # Created by: Wobbzz
 # Contributors: tr0gd0r
 # BTC: 17EZkVxpNmPB1Rwges8g8VAz3T4NRfudCS
+# DGC: DKGT5gcQdr8nQsaqLiszR71kMYLjAuCt6F
 
 This script will allow you to command pool configurations on multiple miners from one
 simple prompt. It complements the cgminer bundled 'miner.php' nicely for people that run
