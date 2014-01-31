@@ -1,7 +1,7 @@
-# Created by: Wobbzz
-# Contributors: tr0gd0r
-# BTC: 17EZkVxpNmPB1Rwges8g8VAz3T4NRfudCS
-# DGC: DKGT5gcQdr8nQsaqLiszR71kMYLjAuCt6F
+Created by: Wobbzz
+Contributors: tr0gd0r
+BTC: 17EZkVxpNmPB1Rwges8g8VAz3T4NRfudCS
+DGC: DKGT5gcQdr8nQsaqLiszR71kMYLjAuCt6F
 
 This script will allow you to command pool configurations on multiple miners from one simple prompt. It complements the cgminer bundled 'miner.php' nicely for people that run larger mining operations. It provides the following features using an object oriented miner approach:
 
@@ -60,3 +60,6 @@ Future plans/feature requests:
 - multipharm() - Automatically implement all pools for a particular coin based on priority
 - Command line arg support for multipharm()
 - Additional features to include stat monitoring, rebooting, alerting, etc
+
+References:
+- https://github.com/ckolivas/cgminer/blob/master/API-README
