@@ -1,0 +1,65 @@
+# Created by: Wobbzz
+# Contributors: tr0gd0r
+# BTC: 17EZkVxpNmPB1Rwges8g8VAz3T4NRfudCS
+
+This script will allow you to command pool configurations on multiple miners from one
+simple prompt. It complements the cgminer bundled 'miner.php' nicely for people that run
+larger mining operations. It provides the following features using an object oriented
+miner approach:
+
+- Stores previously used pools in a database stored in the current working directory. This
+  allows the user to reuse pool settings with ease regardless of worker reboots or saved
+  cgminer configs. The database stores:
+  	- Pool URL
+  	- Worker username prefix
+  	- Worker type (username based or payment address based)
+  	- Pool priority for all pools associated with each coin
+- Interfaces with miners running cgminer via JSON API commands over the network
+- Allows the user to be selective about which miners to manage
+
+This script has several cgminer api commands built into the miner class. However, only a
+select few are currently implemented via interactive methods.
+- addpool()
+- switchpool()
+
+Requirements:
+
+- This script was written for python 3.
+
+- Tested on linux, should work on winblowz but I could be missing something. Let me know
+  if something needs to be fixed.
+  
+- Cgminer needs to be configured to allow api commands. See cgminer api documentation for
+  more information. Here's an example:
+
+				"api-listen" : true,
+				"api-port" : "4028",  
+				"api-allow" : "W:<ip of machine script is executed on>",
+		   i.e. "api-allow" : "W:192.168.1.2",
+		   
+- All worker-based usernames must be named as the last octet of the worker's IP address.
+  This was the easiest way I could think of labeling/identifying the worker objects.
+
+	i.e. You want to manage these IP's:
+			192.168.1.100
+			192.168.1.101
+			192.168.1.102
+			
+		 Your workers on the pool must be named:
+		 	bob.100
+		 	bob.101
+		 	bob.102
+
+- Add IP addresses for all workers in the "kows" list. Be mindful of your syntax.
+
+- All workers must use the same password on the pool. Set script variable "workerpw".
+
+- Profit$$
+
+
+Future plans/feature requests:
+- Better error handling and documentation
+- Pair down command response status to only 'required' information
+- multipharm() - Automatically implement all pools for a particular coin based on priority
+- Command line arg support for multipharm()
+- Additional features to include stat monitoring, rebooting, alerting, etc
